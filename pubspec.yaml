@@ -1,0 +1,65 @@
+name: kigo_app
+description: A new Flutter project.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.3 <4.0.0'
+
+dependencies:
+
+  cupertino_icons: ^1.0.2
+  dartz: ^0.10.1
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.3
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.9
+  flutter_screenutil: ^5.9.0
+  flutter_svg: ^2.0.9
+  http: ^1.1.2
+  meta: ^1.10.0
+  pin_code_fields: ^8.0.1
+
+dev_dependencies:
+
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - images/png/
+    - images/svg/
+
+  fonts:
+    - family: Kanit
+      fonts:
+        - asset: fonts/Kanit/Kanit-Bold.ttf
+
+flutter_native_splash:
+  color: "#FF5A00"
+  image: images/png/kigo-splash.png
+  branding: images/png/kigo-branding.png
+  branding_mode: bottom
+  android: true
+  ios: true
+  web: false
+  android_12:
+    image: images/png/kigo-icon-adaptative.png
+    branding: images/png/kigo-branding-adaptative.png
+    icon_background_color: "#FFFFFF"
+    color: "#FF5A00"
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "images/png/kigo-icon.png"
+  adaptive_icon_foreground: "images/png/kigo-icon-adaptative.png"
+  adaptive_icon_background: "#FFFFFF"
+  min_sdk_android: 21 # android min sdk min:16, default 21

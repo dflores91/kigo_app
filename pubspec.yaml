@@ -37,11 +37,6 @@ flutter:
     - images/png/
     - images/svg/
 
-  fonts:
-    - family: Kanit
-      fonts:
-        - asset: fonts/Kanit/Kanit-Bold.ttf
-
 flutter_native_splash:
   color: "#FF5A00"
   image: images/png/kigo-splash.png

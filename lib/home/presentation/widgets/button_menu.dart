@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:kigo_app/app/presentation/theme/colors.dart';
 import 'package:kigo_app/app/presentation/theme/typography.dart';
 
 class AppButtonMenu extends StatelessWidget {
@@ -21,7 +22,8 @@ class AppButtonMenu extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SizedBox(
+        Container(
+          color: white,
           width: 74,
           child: SizedBox(
             width: 40,

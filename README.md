@@ -9,15 +9,18 @@ Esta aplicación es un mock que incluye varias pantallas esenciales para una exp
 1. **Splash Screen:**
    - La aplicación comienza con una pantalla de presentación que proporciona una experiencia visual atractiva al usuario 
 
-   - Para versiones de Android anteriores a 12 (API nivel 31), se utiliza el enfoque tradicional del tema `@style/Theme.Splash`.
+        - Para versiones de Android anteriores a 12 (API nivel 31), se utiliza el enfoque tradicional del tema `@style/Theme.Splash`.
 
-    - Para versiones de Android 12 y superiores, se implementa el nuevo Splash Screen API (`@style/Theme.SplashScreen`), aprovechando las mejoras de rendimiento y personalización que proporciona.
+        - Para versiones de Android 12 y superiores, se implementa el nuevo Splash Screen API (`@style/Theme.SplashScreen`), aprovechando las mejoras de rendimiento y personalización que proporciona.
 
 2. **Validación del Número de Teléfono:**
-   - En la siguiente pantalla, el usuario puede ingresar su número de teléfono, limitado a un máximo de diez dígitos (al ser un mock solo funciona la validación con el numero 2222222222). Esta información es esencial para la validación del usuario.
+   - En la siguiente pantalla, el usuario puede ingresar su número de teléfono, limitado a un máximo de diez dígitos. Esta información es esencial para la validación del usuario. Actualmente, la validación solo funciona con el número `2222222222`. Ten en cuenta este detalle al probar la aplicación.
 
 3. **Validación del Código por SMS:**
-   - Después de ingresar el número de teléfono, se enviará un código por SMS al número proporcionado (al ser un mock solo debe ingresarse una secuencia de numero del 1 al 6). En esta pantalla, el usuario deberá ingresar el código recibido para la verificación. Si el código es correcto, se redirigirá al usuario a la pantalla principal (Home); de lo contrario, se mostrará un mensaje de error.
+   - Después de ingresar el número de teléfono, se enviará un código por SMS al número proporcionado. En esta pantalla, el usuario deberá ingresar una secuencia de números del 1 al 6 para la verificación. Recuerda que al ser un mock, no es necesario ingresar un código específico. Puedes utilizar cualquier combinación de números del 1 al 6. La validación se considerará exitosa con cualquier secuencia correcta.
+
+4. **Home (Mock):**
+   - La pantalla principal (Home) es un mock que refleja fielmente el diseño en Figma. Sin embargo, ten en cuenta que actualmente no cuenta con funciones implementadas. Su propósito es proporcionar una representación visual coherente con el diseño original.
 
 ## Diseño en Figma
 

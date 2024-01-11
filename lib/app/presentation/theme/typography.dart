@@ -1,94 +1,93 @@
 import 'package:kigo_app/app/presentation/theme/colors.dart' as colors;
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-double _size10 = 10.sp;
-double _size12 = 12.sp;
-double _size13 = 13.sp;
-double _size14 = 14.sp;
-double _size16 = 16.sp;
-double _size18 = 18.sp;
-double _size20 = 20.sp;
+double _size10 = 10;
+double _size12 = 12;
+double _size13 = 13;
+double _size14 = 14;
+double _size16 = 16;
+double _size18 = 18;
+double _size20 = 20;
 
 class TypographyStyle {
   static final TextStyle robotoMedium10 = TextStyle(
     fontSize: _size10,
-    letterSpacing: -0.40.sp,
+    letterSpacing: -0.40,
     fontWeight: FontWeight.w500,
     fontStyle: FontStyle.normal,
-    height: 1.3.h,
+    height: 1.3,
   );
 
   static final TextStyle robotoRegular12 = TextStyle(
     fontSize: _size12,
-    letterSpacing: -0.38.sp,
+    letterSpacing: -0.38,
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
-    height: 1.33.h,
+    height: 1.33,
   );
 
   static final TextStyle robotoRegular13 = TextStyle(
     fontSize: _size13,
-    letterSpacing: -0.32.sp,
+    letterSpacing: -0.32,
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
-    height: 1.4.h,
+    height: 1.4,
   );
 
   static final TextStyle robotoMedium13 = TextStyle(
     fontSize: _size13,
-    letterSpacing: -0.32.sp,
+    letterSpacing: -0.32,
     fontWeight: FontWeight.w500,
     fontStyle: FontStyle.normal,
-    height: 1.4.h,
+    height: 1.4,
   );
 
   static final TextStyle robotoRegular14 = TextStyle(
     fontSize: _size14,
-    letterSpacing: -0.32.sp,
+    letterSpacing: -0.32,
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
-    height: 1.3.h,
+    height: 1.3,
   );
 
   static final TextStyle robotoMedium14 = TextStyle(
     fontSize: _size14,
-    letterSpacing: -0.32.sp,
+    letterSpacing: -0.32,
     fontWeight: FontWeight.w500,
     fontStyle: FontStyle.normal,
-    height: 1.3.h,
+    height: 1.3,
   );
 
   static final TextStyle robotoRegular16 = TextStyle(
     fontSize: _size16,
-    letterSpacing: -0.32.sp,
+    letterSpacing: -0.32,
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
-    height: 1.3.h,
+    height: 1.3,
   );
 
   static final TextStyle robotoSemiBold16 = TextStyle(
     fontSize: _size16,
-    letterSpacing: -0.32.sp,
+    letterSpacing: -0.32,
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
-    height: 1.3.h,
+    height: 1.3,
   );
 
   static final TextStyle robotoSemiBold18 = TextStyle(
     fontSize: _size18,
-    letterSpacing: -0.32.sp,
+    letterSpacing: -0.32,
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
-    height: 1.3.h,
+    height: 1.3,
   );
 
   static final TextStyle kanitBold20 = TextStyle(
     fontSize: _size20,
-    letterSpacing: -0.40.sp,
+    letterSpacing: -0.40,
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
-    height: 1.45.h,
+    height: 1.45,
   );
 }
 

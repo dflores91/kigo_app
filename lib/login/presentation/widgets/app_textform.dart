@@ -2,7 +2,6 @@ import 'package:kigo_app/app/presentation/theme/colors.dart';
 import 'package:kigo_app/app/presentation/theme/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextForm extends StatelessWidget {
   const AppTextForm({
@@ -48,7 +47,7 @@ class AppTextForm extends StatelessWidget {
       inputFormatters: inputFormatters,
       textAlign: textAlign ?? TextAlign.start,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.only(top: 4.h, bottom: 8.h),
+        contentPadding: EdgeInsets.only(top: 4, bottom: 8),
         hintText: hintText,
         hintStyle: TypographyStyle.robotoRegular16.grey,
         labelText: labelText,

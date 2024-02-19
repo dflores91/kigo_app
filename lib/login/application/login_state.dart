@@ -10,6 +10,8 @@ final class LoginState extends Equatable {
   final bool continueHome;
   final bool showErrorPin;
   final bool showErrorPhone;
+  final String areaCode;
+  final bool useWhatsapp;
 
   const LoginState({
     this.phoneNumber = '',
@@ -21,6 +23,8 @@ final class LoginState extends Equatable {
     this.continueHome = false,
     this.showErrorPin = false,
     this.showErrorPhone = false,
+    this.areaCode = '52',
+    this.useWhatsapp = true,
   });
 
   @override
@@ -34,6 +38,8 @@ final class LoginState extends Equatable {
         continueHome,
         showErrorPin,
         showErrorPhone,
+        areaCode,
+        useWhatsapp,
       ];
 
   LoginState copyWith({
@@ -46,6 +52,8 @@ final class LoginState extends Equatable {
     bool? continueHome,
     bool? showErrorPin,
     bool? showErrorPhone,
+    String? areaCode,
+    bool? useWhatsapp,
   }) =>
       LoginState(
         phoneNumber: phoneNumber ?? this.phoneNumber,
@@ -57,6 +65,8 @@ final class LoginState extends Equatable {
         continueHome: continueHome ?? this.continueHome,
         showErrorPin: showErrorPin ?? this.showErrorPin,
         showErrorPhone: showErrorPhone ?? this.showErrorPhone,
+        areaCode: areaCode ?? this.areaCode,
+        useWhatsapp: useWhatsapp ?? this.useWhatsapp,
       );
 
   @override

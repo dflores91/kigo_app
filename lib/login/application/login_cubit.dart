@@ -1,12 +1,15 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kigo_app/login/infrastructure/login_user_repository.dart';
-import 'package:kigo_app/login/infrastructure/login_user_response.dart';
+import 'package:injectable/injectable.dart';
+import 'package:kigo_app/login/domain/login_facade.dart';
 
 part 'login_state.dart';
 
+@injectable
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit() : super(const LoginState());
+  LoginCubit(this.loginUserRepository) : super(const LoginState());
+
+  LoginFacade loginUserRepository;
 
   void acceptTerms(bool isChecked) {
     emit(state.copyWith(isChecked: isChecked));
@@ -19,6 +22,10 @@ class LoginCubit extends Cubit<LoginState> {
           phoneNumber: newNumber,
           isValideNumber: number.replaceAll('-', '').length > 9),
     );
+  }
+
+  void saveCountryCode(String? code) {
+    emit(state.copyWith(areaCode: code));
   }
 
   void valideCode(String code) {
@@ -36,15 +43,8 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   Future<void> login() async {
-    final userData =
-        await LoginUserRepository().loginUser(state.phoneNumber, state.code);
-
-    userData.fold(
-      (l) => emit(state.copyWith(showErrorPin: true)),
-      (LoginUser? loginUser) => emit(state.copyWith(
-          continueHome:
-              loginUser!.data.tokenExpiration.isAfter(DateTime.now()))),
-    );
+    // final responseLogin = await loginUserRepository.login(
+    //     state.phoneNumber, state.areaCode, state.useWhatsapp ? 1 : 0);
   }
 
   void hideShowErrorPin() {

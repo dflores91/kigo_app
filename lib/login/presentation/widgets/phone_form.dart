@@ -1,12 +1,14 @@
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:kigo_app/app/aplication/utils/phone_format.dart';
 import 'package:kigo_app/app/presentation/theme/colors.dart';
 import 'package:kigo_app/app/presentation/theme/typography.dart';
+import 'package:kigo_app/app/presentation/widgets/app_kigo_logo.dart';
+import 'package:kigo_app/app/presentation/widgets/app_switch_adaptative.dart';
 import 'package:kigo_app/login/application/login_cubit.dart';
-import 'package:kigo_app/login/presentation/widgets/app_textform.dart';
+import 'package:kigo_app/app/presentation/widgets/app_textform.dart';
 
 class PhoneForm extends StatelessWidget {
   const PhoneForm({super.key});
@@ -21,11 +23,7 @@ class PhoneForm extends StatelessWidget {
           const SizedBox(
             height: 44,
           ),
-          SvgPicture.asset(
-            'images/svg/logo-kigo-parkimovil.svg',
-            height: 36,
-            width: 125,
-          ),
+          const AppLogoKigo(),
           const SizedBox(
             height: 34,
           ),
@@ -42,15 +40,11 @@ class PhoneForm extends StatelessWidget {
                 Icons.phone_android_rounded,
                 color: greyDisabled,
               ),
-              const SizedBox(
-                width: 22,
-              ),
-              Text(
-                '+52',
-                style: TypographyStyle.robotoMedium14.blue,
-              ),
-              const SizedBox(
-                width: 22,
+              CountryCodePicker(
+                onChanged: (CountryCode? code) =>
+                    context.read<LoginCubit>().saveCountryCode(code?.code),
+                flagWidth: 30,
+                initialSelection: 'MX',
               ),
               Expanded(
                 child: AppTextForm(
@@ -78,11 +72,10 @@ class PhoneForm extends StatelessWidget {
           ),
           Row(
             children: [
-              Switch(
-                value: state.isChecked,
-                onChanged: (bool value) =>
-                    context.read<LoginCubit>().acceptTerms(value),
-              ),
+              AppSwitchAdaptative(
+                  isChecked: state.isChecked,
+                  onChanged: (bool value) =>
+                      context.read<LoginCubit>().acceptTerms(value)),
               const SizedBox(width: 19),
               Text.rich(
                 TextSpan(

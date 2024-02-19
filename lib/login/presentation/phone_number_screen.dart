@@ -4,7 +4,7 @@ import 'package:kigo_app/app/presentation/theme/colors.dart';
 import 'package:kigo_app/app/presentation/theme/typography.dart';
 import 'package:kigo_app/home/presentation/home_screen.dart';
 import 'package:kigo_app/login/application/login_cubit.dart';
-import 'package:kigo_app/login/presentation/widgets/app_button.dart';
+import 'package:kigo_app/app/presentation/widgets/app_button.dart';
 import 'package:kigo_app/login/presentation/widgets/code_form.dart';
 import 'package:kigo_app/login/presentation/widgets/phone_form.dart';
 
@@ -72,15 +72,27 @@ class PhoneNumberScreen extends StatelessWidget {
                         const Spacer(),
                         if (state.continueCode)
                           AppButton(
-                            ontao: state.isValideCode
+                            onTap: state.isValideCode
                                 ? () => context.read<LoginCubit>().login()
                                 : null,
                             isActive: state.isValideCode,
                             buttonText: 'Continuar',
                           )
-                        else
+                        else ...[
                           AppButton(
-                            ontao: state.isChecked && state.isValideNumber
+                            onTap: state.isChecked && state.isValideNumber
+                                ? () => context
+                                    .read<LoginCubit>()
+                                    .continueValidateCode()
+                                : null,
+                            isActive: state.isChecked && state.isValideNumber,
+                            buttonText: 'Recibir código por Whatsapp',
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          AppButton(
+                            onTap: state.isChecked && state.isValideNumber
                                 ? () => context
                                     .read<LoginCubit>()
                                     .continueValidateCode()
@@ -88,8 +100,9 @@ class PhoneNumberScreen extends StatelessWidget {
                             isActive: state.isChecked && state.isValideNumber,
                             buttonText: 'Recibir código por SMS',
                           ),
+                        ],
                         const SizedBox(
-                          height: 35,
+                          height: 25,
                         ),
                         Text(
                           '¿Necesitas ayuda?',

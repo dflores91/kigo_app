@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kigo_app/app/aplication/config/injectable.dart';
 import 'package:kigo_app/login/application/login_cubit.dart';
 import 'package:kigo_app/login/presentation/phone_number_screen.dart';
 
@@ -9,7 +10,7 @@ class RegistrationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => LoginCubit(),
+      create: (BuildContext context) => getIt.get<LoginCubit>(),
       child: const PhoneNumberScreen(),
     );
   }

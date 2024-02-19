@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:kigo_app/app/aplication/utils/format_extension.dart';
 import 'package:kigo_app/app/presentation/theme/colors.dart';
 import 'package:kigo_app/app/presentation/theme/typography.dart';
+import 'package:kigo_app/app/presentation/widgets/app_kigo_logo.dart';
 import 'package:kigo_app/login/application/login_cubit.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -20,11 +20,7 @@ class CodeForm extends StatelessWidget {
           const SizedBox(
             height: 44,
           ),
-          SvgPicture.asset(
-            'images/svg/logo-kigo-parkimovil.svg',
-            height: 36,
-            width: 125,
-          ),
+          const AppLogoKigo(),
           const SizedBox(
             height: 34,
           ),
